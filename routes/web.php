@@ -10,3 +10,6 @@ Route::get('/', function () {
 Route::get('/new', [
     'uses' => 'PagesController@new'
 ]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
