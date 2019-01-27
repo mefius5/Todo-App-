@@ -9,7 +9,8 @@
                
                 @foreach (Auth::user()->todos as $todo)
                    <div class="card card-body mb-3">
-                       <p class="card-text">{{$todo->id }}</p>
+                       <h4 class="card-title">{{$todo->body }}</h4>
+                       <div class="bg-light">{{$todo->created_at}}</div>
                        
                    </div>
                     @endforeach
