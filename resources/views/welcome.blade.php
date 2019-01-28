@@ -81,7 +81,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome in my Todo App!
+                    Simple Todo App.
+                    <br>
+                    Note your tasks and do it!
                     
                 </div>
             </div>

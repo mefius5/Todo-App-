@@ -8,7 +8,7 @@
             <div class="todo mb-3">
                
                 @foreach (Auth::user()->todos as $todo)
-                   <div class="card card-body mb-3">
+                   <div class="card card-body mb-1">
                        <h4 class="card-title">{{$todo->body }}</h4>
                        <div class="bg-light">{{$todo->created_at}}</div>
                        
