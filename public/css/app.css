@@ -189,14 +189,14 @@ sup {
 }
 
 a {
-    color: #3490dc;
+    color: #212529;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
 a:hover {
-    color: #1d68a7;
+/*    color: #1d68a7;*/
     text-decoration: underline
 }
 
@@ -1735,14 +1735,15 @@ pre code {
     width: 100%;
     height: calc(2.19rem + 2px);
     padding: .375rem .75rem;
-    font-size: .9rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    background-color: transparent;
+    outline: none;
+/*    background-clip: padding-box;*/
+    border: 0px solid #96999d;
+/*    border-radius: .25rem;*/
+/*    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out*/
 }
 
 @media screen and (prefers-reduced-motion:reduce) {
@@ -1758,7 +1759,7 @@ pre code {
 
 .form-control:focus {
     color: #495057;
-    background-color: #fff;
+    background-color: transparent;
     border-color: #a1cbef;
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(52, 144, 220, .25)
@@ -2207,6 +2208,7 @@ textarea.form-control {
 }
 
 .btn {
+    background: transparent;
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -2232,7 +2234,8 @@ textarea.form-control {
 
 .btn:focus,
 .btn:hover {
-    text-decoration: none
+    text-decoration: none;
+    background: #6a4e32;
 }
 
 .btn.focus,
@@ -2865,12 +2868,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
     font-weight: 400;
-    color: #3490dc;
+/*    color: #3490dc;*/
     background-color: transparent
 }
 
 .btn-link:hover {
-    color: #1d68a7;
+/*    color: #1d68a7;*/
     background-color: transparent
 }
 

@@ -17,3 +17,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/todos', [
    'uses' => 'TodosController@index' 
 ]);
+
+Route::post('/create/todo', [
+    'uses' => 'TodosController$store'
+]);

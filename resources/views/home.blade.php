@@ -1,8 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
+   
     <div class="row justify-content-center">
+<!--       <div class="row">-->
+       <div class="col-lg-6 col-lg-offset-3 mb-2">
+           <form action="/create/todo" method="post">
+               <input type="text" class="form-control input-lg text-center" name="todo" placeholder="your new todo...">
+           </form>
+       </div>
+   </div>
         <div class="col-md-8">
             <h1>Your todos:</h1>
             <div class="todo mb-3">
