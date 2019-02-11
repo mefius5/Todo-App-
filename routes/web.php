@@ -19,5 +19,5 @@ Route::get('/todos', [
 ]);
 
 Route::post('/create/todo', [
-    'uses' => 'TodosController$store'
+    'uses' => 'TodosController@store'
 ]);

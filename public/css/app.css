@@ -2237,6 +2237,13 @@ textarea.form-control {
     text-decoration: none;
     background: #6a4e32;
 }
+.btn-delete:hover {
+    background:transparent;
+}
+
+far{
+    font-size: 5x;
+}
 
 .btn.focus,
 .btn:focus {
