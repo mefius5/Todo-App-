@@ -25,7 +25,9 @@
                            <div class="bg-light">{{$todo->created_at}}</div>
                             
                        </div>
-                       <button class="btn btn-delete"><i class="far fa-times-circle fa-3x"></i></button>
+                       <a href="{{ route('todo.delete' , ['id' => $todo->id]) }}"><i class="far fa-times-circle fa-3x mt-3 mr-3"></i></a>
+                       
+                        <a href="{{ route('todo.update' , ['id' => $todo->id]) }}"><i class="fas fa-edit fa-3x mt-3"></i></a>
                       
                   </div>
                    
