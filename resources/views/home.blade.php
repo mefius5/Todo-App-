@@ -14,7 +14,7 @@
            </form>
        </div>
    </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1>Your todos:</h1>
             <div class="todo mb-3">
                
@@ -27,9 +27,17 @@
                        </div>
                        <a href="{{ route('todo.delete' , ['id' => $todo->id]) }}"><i class="far fa-times-circle fa-3x mt-3 mr-3"></i></a>
                        
-                        <a href="{{ route('todo.update' , ['id' => $todo->id]) }}"><i class="fas fa-edit fa-3x mt-3"></i></a>
-                      
+                        <a href="{{ route('todo.update' , ['id' => $todo->id]) }}"><i class="fas fa-edit fa-3x mt-3 mr-3"></i></a>
+                        @if(!$todo->completed)
+                            <a href="{{route('todos.completed', ['id' => $todo->id])}}"><i class="fas fa-check fa-3x mt-3"></i></a>
+                        @else
+                           <h3 class = "mt-3">Completed</h3>
+                            
+                        @endif
+
                   </div>
+                  
+                  <hr>
                    
                     @endforeach
             </div>
