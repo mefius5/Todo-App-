@@ -23,6 +23,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+   @if(Session::has('success'))
+       <div class="alert alert-success" role="alert">
+           {{Session::get('success')}}
+       </div>
+    @endif
+   
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
