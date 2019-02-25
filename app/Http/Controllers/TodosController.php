@@ -11,7 +11,7 @@ class TodosController extends Controller
     public function index(){
         
         $todos = Todo::all();
-        return view('todos')->with('todos', $todos);
+        return view('todos')->with('todos', $todos)->paginate(5);
     }
     public function store(Request $request){
 //    
@@ -24,7 +24,7 @@ class TodosController extends Controller
         $todo->user_id = Auth::user()->id;
         $todo->save();
         
-        $session::flash('success', 'Your todo was created');
+//        $session::flash('success', 'Your todo was created');
         
         
         return redirect()->back();
@@ -35,7 +35,7 @@ class TodosController extends Controller
         
         $todo->delete();
         
-        $session::flash('success', 'Your todo was deleted');
+//        $session::flash('success', 'Your todo was deleted');
         
         return redirect()->back();
     }
@@ -51,7 +51,7 @@ class TodosController extends Controller
         $todo->body = $request->todo;
         $todo->save();
         
-        $session::flash('success', 'Your todo was updated');
+//        $session::flash('success', 'Your todo was updated');
         
         return redirect()->route('home');
     }
