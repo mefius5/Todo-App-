@@ -20,16 +20,16 @@
                
                 @foreach (Auth::user()->todos as $todo)
                   <div class="row">
-                      <div class="card card-body mb-1">
+                      <div class="card card-body">
                            <h4 class="card-title">{{$todo->body }}</h4>
                            <div class="bg-light">{{$todo->created_at}}</div>
                             
                        </div>
-                       <a href="{{ route('todo.delete' , ['id' => $todo->id]) }}"><i class="far fa-times-circle fa-3x mt-3 mr-3"></i></a>
+                       <a href="{{ route('todo.delete' , ['id' => $todo->id]) }}"><i class="far fa-times-circle fa-2x mt-3 mr-3"></i></a>
                        
-                        <a href="{{ route('todo.update' , ['id' => $todo->id]) }}"><i class="fas fa-edit fa-3x mt-3 mr-3"></i></a>
+                        <a href="{{ route('todo.update' , ['id' => $todo->id]) }}"><i class="fas fa-edit fa-2x mt-3 mr-3"></i></a>
                         @if(!$todo->completed)
-                            <a href="{{route('todos.completed', ['id' => $todo->id])}}"><i class="fas fa-check fa-3x mt-3"></i></a>
+                            <a href="{{route('todos.completed', ['id' => $todo->id])}}"><i class="fas fa-check fa-2x mt-3"></i></a>
                         @else
                            <h3 class = "mt-3">Completed</h3>
                             
@@ -37,7 +37,7 @@
 
                   </div>
                   
-                  <hr>
+                  <hr class="mt-0 mb-0">
                    
                     @endforeach
             </div>
