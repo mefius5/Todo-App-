@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use Session;
 use Illuminate\Support\Facades\Auth;
 use App\Todo;
 use Illuminate\Http\Request;
@@ -10,8 +9,10 @@ class TodosController extends Controller
 {
     public function index(){
         
-        $todos = Todo::all();
-        return view('todos')->with('todos', $todos)->paginate(5);
+        
+        $todos = Todo::where("user_id", "=", Auth::user()->id)->paginate(5);
+//        dd($todos);
+        return view('home', ['todos' => $todos]);
     }
     public function store(Request $request){
 //    
@@ -24,9 +25,6 @@ class TodosController extends Controller
         $todo->user_id = Auth::user()->id;
         $todo->save();
         
-//        $session::flash('success', 'Your todo was created');
-        
-        
         return redirect()->back();
     }
     
@@ -34,8 +32,6 @@ class TodosController extends Controller
         $todo = Todo::find($id);
         
         $todo->delete();
-        
-//        $session::flash('success', 'Your todo was deleted');
         
         return redirect()->back();
     }
@@ -50,8 +46,7 @@ class TodosController extends Controller
         
         $todo->body = $request->todo;
         $todo->save();
-        
-//        $session::flash('success', 'Your todo was updated');
+
         
         return redirect()->route('home');
     }

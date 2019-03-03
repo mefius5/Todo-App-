@@ -18,7 +18,7 @@
             <h1>Your todos:</h1>
             <div class="todo mb-3">
                
-                @foreach (Auth::user()->todos as $todo)
+                @foreach ($todos as $todo)
                   <div class="row">
                       <div class="card card-body">
                            <h4 class="card-title">{{$todo->body }}</h4>
@@ -41,6 +41,11 @@
                    
                     @endforeach
             </div>
+
+            <div class="justify-content-center">
+                {{$todos->links("pagination::bootstrap-4")}}
+            </div>
+
             
         </div>
     </div>
