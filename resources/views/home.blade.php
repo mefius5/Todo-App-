@@ -10,12 +10,16 @@
        <div class="col-lg-6 col-lg-offset-3 mb-2">
            <form action="/create/todo" method="post">
               {{ csrf_field()}}
-               <input type="text" class="form-control input-lg text-center" name="todo" placeholder="your new todo...">
+               <input type="text" class="form-control input-lg text-center new-todo" name="todo" placeholder="your new todo...">
            </form>
        </div>
    </div>
         <div class="col-md-12">
             <h1>Your todos:</h1>
+            <div class="justify-content-center">
+                {{$todos->links("pagination::bootstrap-4")}}
+            </div>
+            
             <div class="todo mb-3">
                
                 @foreach ($todos as $todo)
@@ -42,11 +46,6 @@
                     @endforeach
             </div>
 
-            <div class="justify-content-center">
-                {{$todos->links("pagination::bootstrap-4")}}
-            </div>
-
-            
         </div>
     </div>
 </div>
